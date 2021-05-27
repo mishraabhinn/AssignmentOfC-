@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{F7B670AF-CFA4-4496-BE38-DE181A9EA5E9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SoftwareDesignAndArchitectureProblem/Program.cs">
+    <Files>
+      <File FileName="SoftwareDesignAndArchitectureProblem/Program.cs" Line="50" Column="4" />
+      <File FileName="SoftwareDesignAndArchitectureProblem/Calculations.cs" />
+      <File FileName="SoftwareDesignAndArchitectureProblem.Tests/XunitTest.cs" />
+      <File FileName="SoftwareDesignAndArchitectureProblem/CsvReader.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SoftwareDesignAndArchitectureProblem" expanded="True">
+            <Node name="SoftwareDesignAndArchitectureProblem" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+            <Node name="SoftwareDesignAndArchitectureProblem.Tests" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="SoftwareDesignAndArchitectureProblem" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.SoftwareDesignAndArchitectureProblem PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders>
+    <String>/Users/abhinnmishra/Downloads/CsharpHandson/ProjectKlingelnberg/Assignment</String>
+  </Debugger.DebugSourceFolders>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
