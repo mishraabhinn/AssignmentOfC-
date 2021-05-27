@@ -20,6 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SoftwareDesignAndArchitectureProblem\SoftwareDesignAndArchitectureProblem.csproj" />
+    <ProjectReference Include="..\SoftwareDesignAndArchitectureProblem\GetMachineNameAssestNameLatestSeries.csproj" />
   </ItemGroup>
 </Project>
