@@ -6,12 +6,11 @@ namespace GetMachineNameAssestNameLastestAssest.Service
     public class GetMachineDetails
     {
         string UserInput;
-        char UserInputOption;
         List<MachineProperties> machines;
-        public GetMachineDetails(char userinputoption, string userinput, List<MachineProperties> machines)
+        public GetMachineDetails(string userInput, List<MachineProperties> machines)
         {
-            this.UserInputOption = userinputoption;
-            this.UserInput = userinput;
+            
+            this.UserInput = userInput;
             this.machines = machines;
 
         }

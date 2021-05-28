@@ -33,7 +33,7 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
             CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new GetMachineDetails('a', "C300", machines);
+            var obj = new GetMachineDetails("C300", machines);
             int actual = 3;
 
             //act
@@ -51,7 +51,7 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
             CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new GetMachineDetails('b', "Cutter head", machines);
+            var obj = new GetMachineDetails("Cutter head", machines);
             int actual = 3;
 
             //act
@@ -70,7 +70,7 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
             CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new GetMachineDetails('c', "C300", machines);
+            var obj = new GetMachineDetails("C300", machines);
             string actual = "C60";
 
             //act

@@ -40,7 +40,7 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 
 			return machines;
 		}
-		//This function spilts the line on the basis on comma(,) create a new instance of class MachineProperties and reutn to the Funtion ReadAllMAchines.
+		//This function spilts the line on the basis on comma(,) create a new instance of class MachineProperties and return to the Funtion ReadAllMAchines.
 		public MachineProperties ReadMachineFromCsvLine(string csvLine)
 		{
 			string[] parts = csvLine.Split(',');
