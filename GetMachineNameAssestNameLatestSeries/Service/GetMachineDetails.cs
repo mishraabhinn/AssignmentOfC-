@@ -51,8 +51,8 @@ namespace GetMachineNameAssestNameLastestAssest.Service
             
             return machineNames;
         }
-        //This fuction get the machine types which are using the latest series of all the assets that it uses.
 
+        //This fuction get the machine types which are using the latest series of all the assets that it uses.
         public List<MachineProperties> getMachineTypeWithLatestSeries()
         {
             List<MachineProperties> latestMachineTypes = new List<MachineProperties>();
