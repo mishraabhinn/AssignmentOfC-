@@ -13,9 +13,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string userinput = "Cutter head";
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
-            CsvReader reader = new CsvReader(filePath, userinput);
+            CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
             int actual = 9;
 
@@ -31,9 +30,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string userinput = "Cutter head";
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
-            CsvReader reader = new CsvReader(filePath, userinput);
+            CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
             var obj = new GetMachineDetails('a', "C300", machines);
             int actual = 3;
@@ -50,9 +48,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string userinput = "Cutter head";
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
-            CsvReader reader = new CsvReader(filePath, userinput);
+            CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
             var obj = new GetMachineDetails('b', "Cutter head", machines);
             int actual = 3;
@@ -70,9 +67,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string userinput = "Cutter head";
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
-            CsvReader reader = new CsvReader(filePath, userinput);
+            CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
             var obj = new GetMachineDetails('c', "C300", machines);
             string actual = "C60";

@@ -16,61 +16,65 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 
         }
 
+        //This function return all the assest name for a particular machine type is using.
         public List<string> getAssetName()
         {
-            List<string> ans = new List<string>();
+            List<string> assetsName = new List<string>();
             
             
             foreach (MachineProperties machine in machines)
             {
                 if (machine.MachineName == UserInput)
                 {
-                    ans.Add(machine.Assetname);
+                    assetsName.Add(machine.Assetname);
                 }
             }
 
             
             
-            return ans;
+            return assetsName;
         }
+
+        //This function return all the machine name for a particular asset type given.
         public List<string> getMachineName()
         {
-            List<string> ans = new List<string>();
+            List<string> machineNames = new List<string>();
             
             
             foreach (MachineProperties machine in machines)
             {
                 if (machine.Assetname == UserInput)
                 {
-                    ans.Add(machine.MachineName);
+                    machineNames.Add(machine.MachineName);
                 }
 
             }
             
-            return ans;
+            return machineNames;
         }
+        //This fuction get the machine types which are using the latest series of all the assets that it uses.
 
         public List<MachineProperties> getMachineTypeWithLatestSeries()
         {
-            List<MachineProperties> result = new List<MachineProperties>();
-            result.Add(machines[0]);
+            List<MachineProperties> latestMachineTypes = new List<MachineProperties>();
+            latestMachineTypes.Add(machines[0]);
             for (int i = 1; i < machines.Count; i++)
             {
-                for (int j = 0; j < result.Count; j++)
+                for (int j = 0; j < latestMachineTypes.Count; j++)
                 {
-                    if (String.Compare(result[j].Assetname, machines[i].Assetname) == 0)
+                    if (String.Compare(latestMachineTypes[j].Assetname, machines[i].Assetname) == 0)
                     {
-                        if (String.Compare(result[j].Series, machines[i].Series) < 0)
+                        if (String.Compare(latestMachineTypes[j].Series, machines[i].Series) < 0)
                         {
-                            result.RemoveAt(j);
-                            result.Add(machines[i]);
+                            latestMachineTypes.RemoveAt(j);
+                            latestMachineTypes.Add(machines[i]);
                             break;
                         }
 
                     }
                 }
             }
-            return result;
+            return latestMachineTypes;
         }
 
 

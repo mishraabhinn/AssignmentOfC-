@@ -11,14 +11,14 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 	public class CsvReader
 	{
 		private string _csvFilePath;
-		private string UserInput;
 
-		public CsvReader(string csvFilePath, string userInput)
+		//Constructor get the file path when an instance of the class is created.
+		public CsvReader(string csvFilePath)
 		{
 			this._csvFilePath = csvFilePath;
-			UserInput = userInput;
 		}
 
+		//This function is used to read the lines in the csv files and append in a list and return that list.
 		public List<MachineProperties> ReadAllMachines()
 		{
 			List<MachineProperties> machines = new List<MachineProperties>();
@@ -40,7 +40,7 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 
 			return machines;
 		}
-
+		//This function spilts the line on the basis on comma(,) create a new instance of class MachineProperties and reutn to the Funtion ReadAllMAchines.
 		public MachineProperties ReadMachineFromCsvLine(string csvLine)
 		{
 			string[] parts = csvLine.Split(',');
