@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using GetMachineNameAssestNameLastestAssest.Model;
 namespace GetMachineNameAssestNameLastestAssest.Service
 {
-    public class Calculations
+    public class GetMachineDetails
     {
         string UserInput;
         char UserInputOption;
         List<MachineProperties> machines;
-        public Calculations(char userinputoption, string userinput, List<MachineProperties> machines)
+        public GetMachineDetails(char userinputoption, string userinput, List<MachineProperties> machines)
         {
             this.UserInputOption = userinputoption;
             this.UserInput = userinput;
