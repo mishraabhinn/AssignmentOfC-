@@ -30,14 +30,14 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
+            string filePath = @"/Users/abhinnmishra/MachineDetailsProject/Data.csv";
             CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new GetMachineDetails("C300", machines);
+            var obj = new CuttingMachinesAccessories("C300", machines);
             int actual = 3;
 
             //act
-            List<string> expected = obj.getAssetName();
+            List<string> expected = obj.GetAssetName();
 
             //assert
             Assert.Equal(actual, expected.Count);
@@ -51,11 +51,11 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
             CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new GetMachineDetails("Cutter head", machines);
+            var obj = new CuttingMachinesAccessories("Cutter head", machines);
             int actual = 3;
 
             //act
-            List<string> expected = obj.getMachineName();
+            List<string> expected = obj.GetMachineName();
 
             //assert
             Assert.Equal(actual, expected.Count);
@@ -70,11 +70,11 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
             string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
             CsvReader reader = new CsvReader(filePath);
             List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new GetMachineDetails("C300", machines);
+            var obj = new CuttingMachinesAccessories("C300", machines);
             string actual = "C60";
 
             //act
-            List<MachineProperties> expected = obj.getMachineTypeWithLatestSeries();
+            List<MachineProperties> expected = obj.GetMachineTypeWithLatestSeries();
 
             //assert
             Assert.Equal(actual, expected[0].MachineName);

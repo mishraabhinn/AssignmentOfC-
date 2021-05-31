@@ -3,29 +3,29 @@ using System.Collections.Generic;
 using GetMachineNameAssestNameLastestAssest.Model;
 namespace GetMachineNameAssestNameLastestAssest.Service
 {
-    public class GetMachineDetails
+    public class CuttingMachinesAccessories
     {
-        string UserInput;
+        string machineName;
         List<MachineProperties> machines;
-        public GetMachineDetails(string userInput, List<MachineProperties> machines)
+        public CuttingMachinesAccessories(string machineName, List<MachineProperties> machines)
         {
             
-            this.UserInput = userInput;
+            this.machineName = machineName;
             this.machines = machines;
 
         }
 
         //This function return all the assest name for a particular machine type is using.
-        public List<string> getAssetName()
+        public List<string> GetAssetName()
         {
             List<string> assetsName = new List<string>();
             
             
             foreach (MachineProperties machine in machines)
             {
-                if (machine.MachineName == UserInput)
+                if (machine.MachineName == machineName)
                 {
-                    assetsName.Add(machine.Assetname);
+                    assetsName.Add(machine.AssetName);
                 }
             }
 
@@ -35,14 +35,14 @@ namespace GetMachineNameAssestNameLastestAssest.Service
         }
 
         //This function return all the machine name for a particular asset type given.
-        public List<string> getMachineName()
+        public List<string> GetMachineName()
         {
             List<string> machineNames = new List<string>();
             
             
             foreach (MachineProperties machine in machines)
             {
-                if (machine.Assetname == UserInput)
+                if (machine.AssetName == machineName)
                 {
                     machineNames.Add(machine.MachineName);
                 }
@@ -53,7 +53,7 @@ namespace GetMachineNameAssestNameLastestAssest.Service
         }
 
         //This fuction get the machine types which are using the latest series of all the assets that it uses.
-        public List<MachineProperties> getMachineTypeWithLatestSeries()
+        public List<MachineProperties> GetMachineTypeWithLatestSeries()
         {
             List<MachineProperties> latestMachineTypes = new List<MachineProperties>();
             latestMachineTypes.Add(machines[0]);
@@ -61,7 +61,7 @@ namespace GetMachineNameAssestNameLastestAssest.Service
             {
                 for (int j = 0; j < latestMachineTypes.Count; j++)
                 {
-                    if (String.Compare(latestMachineTypes[j].Assetname, machines[i].Assetname) == 0)
+                    if (String.Compare(latestMachineTypes[j].AssetName, machines[i].AssetName) == 0)
                     {
                         if (String.Compare(latestMachineTypes[j].Series, machines[i].Series) < 0)
                         {

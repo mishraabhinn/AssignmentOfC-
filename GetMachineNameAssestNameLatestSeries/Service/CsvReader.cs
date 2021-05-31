@@ -13,9 +13,9 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 		private string _csvFilePath;
 
 		//Constructor get the file path when an instance of the class is created.
-		public CsvReader(string csvFilePath)
+		public CsvReader(string _csvFilePath)
 		{
-			this._csvFilePath = csvFilePath;
+			this._csvFilePath = _csvFilePath;
 		}
 
 		//This function is used to read the lines in the csv files and append in a list and return that list.
@@ -44,11 +44,11 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 		public MachineProperties ReadMachineFromCsvLine(string csvLine)
 		{
 			string[] parts = csvLine.Split(',');
-			string machinename = parts[0];
-			string assetname = parts[1];
+			string machineName = parts[0];
+			string assetName = parts[1];
 			string series = parts[2];
 
-			return new MachineProperties(machinename, assetname, series);
+			return new MachineProperties(machineName, assetName, series);
 		}
 
 
