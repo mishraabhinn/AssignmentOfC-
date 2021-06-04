@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using GetMachineNameAssestNameLastestAssest.Model;
 namespace GetMachineNameAssestNameLastestAssest.Service
 {
-    public class CuttingMachinesAccessories
+    public class CuttingMachinesAccessories : ICuttingMachinesAccessories
     {
         string machineName;
         CsvReader reader = new CsvReader(@"/Users/abhinnmishra/MachineDetailsProject/Data.csv");

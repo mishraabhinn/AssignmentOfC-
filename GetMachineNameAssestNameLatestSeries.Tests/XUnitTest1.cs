@@ -13,7 +13,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            var obj = new CuttingMachinesAccessories();
+            //var obj = new CuttingMachinesAccessories();
+            ICuttingMachinesAccessories obj = new CuttingMachinesAccessories();
             List<MachineProperties> machines = obj.GetAllMachineAcessories();
             int actual = 9;
 
