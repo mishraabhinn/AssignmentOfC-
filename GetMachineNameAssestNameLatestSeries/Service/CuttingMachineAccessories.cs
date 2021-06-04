@@ -6,16 +6,22 @@ namespace GetMachineNameAssestNameLastestAssest.Service
     public class CuttingMachinesAccessories
     {
         string machineName;
+        CsvReader reader = new CsvReader(@"/Users/abhinnmishra/MachineDetailsProject/Data.csv");
         List<MachineProperties> machines;
-        public CuttingMachinesAccessories(string machineName, List<MachineProperties> machines)
+        public CuttingMachinesAccessories(string machineName)
         {
             this.machineName = machineName;
-            this.machines = machines;
+            this.machines = reader.ReadAllMachines();
 
         }
-        public CuttingMachinesAccessories(List<MachineProperties> machines)
+        public CuttingMachinesAccessories()
         {
-            this.machines = machines;
+            this.machines = reader.ReadAllMachines();
+        }
+
+        public List<MachineProperties> GetAllMachineAcessories()
+        {
+            return machines;
         }
 
         //This function return all the assest name for a particular machine type is using.

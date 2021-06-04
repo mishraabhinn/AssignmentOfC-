@@ -13,9 +13,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
-            CsvReader reader = new CsvReader(filePath);
-            List<MachineProperties> machines = reader.ReadAllMachines();
+            var obj = new CuttingMachinesAccessories();
+            List<MachineProperties> machines = obj.GetAllMachineAcessories();
             int actual = 9;
 
             //act
@@ -30,10 +29,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string filePath = @"/Users/abhinnmishra/MachineDetailsProject/Data.csv";
-            CsvReader reader = new CsvReader(filePath);
-            List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new CuttingMachinesAccessories("C300", machines);
+
+            var obj = new CuttingMachinesAccessories("C300");
             int actual = 3;
 
             //act
@@ -48,10 +45,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
-            CsvReader reader = new CsvReader(filePath);
-            List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new CuttingMachinesAccessories("Cutter head", machines);
+
+            var obj = new CuttingMachinesAccessories("Cutter head");
             int actual = 3;
 
             //act
@@ -67,10 +62,8 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
         {
 
             //arrange
-            string filePath = @"/Users/abhinnmishra/Projects/SoftwareDesignAndArchitectureProblem/Data.csv";
-            CsvReader reader = new CsvReader(filePath);
-            List<MachineProperties> machines = reader.ReadAllMachines();
-            var obj = new CuttingMachinesAccessories("C300", machines);
+
+            var obj = new CuttingMachinesAccessories("C300");
             string actual = "C60";
 
             //act
