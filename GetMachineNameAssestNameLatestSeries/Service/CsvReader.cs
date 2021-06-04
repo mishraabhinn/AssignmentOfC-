@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
 using GetMachineNameAssestNameLastestAssest.Model;
 
@@ -22,7 +18,7 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 		public List<MachineProperties> ReadAllMachines()
 		{
 			List<MachineProperties> machines = new List<MachineProperties>();
-			
+
 			using (StreamReader sr = new StreamReader(_csvFilePath))
 			{
 				// read header line
@@ -31,8 +27,6 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 
 				while ((csvLine = sr.ReadLine()) != null)
 				{
-
-
 					machines.Add(ReadMachineFromCsvLine(csvLine));
 				}
 

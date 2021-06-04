@@ -9,18 +9,20 @@ namespace GetMachineNameAssestNameLastestAssest.Service
         List<MachineProperties> machines;
         public CuttingMachinesAccessories(string machineName, List<MachineProperties> machines)
         {
-            
             this.machineName = machineName;
             this.machines = machines;
 
+        }
+        public CuttingMachinesAccessories(List<MachineProperties> machines)
+        {
+            this.machines = machines;
         }
 
         //This function return all the assest name for a particular machine type is using.
         public List<string> GetAssetName()
         {
             List<string> assetsName = new List<string>();
-            
-            
+
             foreach (MachineProperties machine in machines)
             {
                 if (machine.MachineName == machineName)
@@ -29,8 +31,6 @@ namespace GetMachineNameAssestNameLastestAssest.Service
                 }
             }
 
-            
-            
             return assetsName;
         }
 
@@ -38,8 +38,7 @@ namespace GetMachineNameAssestNameLastestAssest.Service
         public List<string> GetMachineName()
         {
             List<string> machineNames = new List<string>();
-            
-            
+
             foreach (MachineProperties machine in machines)
             {
                 if (machine.AssetName == machineName)
@@ -48,7 +47,7 @@ namespace GetMachineNameAssestNameLastestAssest.Service
                 }
 
             }
-            
+
             return machineNames;
         }
 
@@ -75,7 +74,6 @@ namespace GetMachineNameAssestNameLastestAssest.Service
             }
             return latestMachineTypes;
         }
-
 
     }
 }
