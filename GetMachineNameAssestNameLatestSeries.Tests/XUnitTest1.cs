@@ -31,11 +31,11 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
 
             //arrange
 
-            var obj = new CuttingMachinesAccessories("C300");
+            var obj = new CuttingMachinesAccessories();
             int actual = 3;
 
             //act
-            List<string> expected = obj.GetAssetName();
+            List<string> expected = obj.GetAssetName("C300");
 
             //assert
             Assert.Equal(actual, expected.Count);
@@ -47,11 +47,11 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
 
             //arrange
 
-            var obj = new CuttingMachinesAccessories("Cutter head");
+            var obj = new CuttingMachinesAccessories();
             int actual = 3;
 
             //act
-            List<string> expected = obj.GetMachineName();
+            List<string> expected = obj.GetMachineName("Cutter head");
 
             //assert
             Assert.Equal(actual, expected.Count);
@@ -64,7 +64,7 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
 
             //arrange
 
-            var obj = new CuttingMachinesAccessories("C300");
+            var obj = new CuttingMachinesAccessories();
             string actual = "C60";
 
             //act

@@ -33,13 +33,13 @@ namespace GetMachineNameAssestNameLatestSeries.Controllers
         [HttpGet("assets-name/{machinename}")]
         public IActionResult GetAssestName(string machineName)
         {
-
-            var assetNames = new CuttingMachinesAccessories(machineName);
-            if (assetNames.GetAssetName().Count == 0)
+            
+            
+            if (_cuttingMachineAccessories.GetAssetName(machineName).Count == 0)
             {
                 return NotFound();
             }
-            return Ok(assetNames.GetAssetName());
+            return Ok(_cuttingMachineAccessories.GetAssetName(machineName));
         }
 
         [HttpGet("machines-name/{assetname}")]
@@ -47,12 +47,12 @@ namespace GetMachineNameAssestNameLatestSeries.Controllers
         {
 
 
-            var machineName = new CuttingMachinesAccessories(assetName);
-            if (machineName.GetMachineName().Count == 0)
+           
+            if (_cuttingMachineAccessories.GetMachineName(assetName).Count == 0)
             {
                 return NotFound();
             }
-            return Ok(machineName.GetMachineName());
+            return Ok(_cuttingMachineAccessories.GetMachineName(assetName));
         }
 
         [HttpGet("latest-series")]

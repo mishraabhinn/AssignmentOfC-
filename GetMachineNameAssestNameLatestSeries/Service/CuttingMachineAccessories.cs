@@ -5,15 +5,9 @@ namespace GetMachineNameAssestNameLastestAssest.Service
 {
     public class CuttingMachinesAccessories
     {
-        string machineName;
+        
         CsvReader reader = new CsvReader(@"/Users/abhinnmishra/MachineDetailsProject/Data.csv");
         List<MachineProperties> machines;
-        public CuttingMachinesAccessories(string machineName)
-        {
-            this.machineName = machineName;
-            this.machines = reader.ReadAllMachines();
-
-        }
         public CuttingMachinesAccessories()
         {
             this.machines = reader.ReadAllMachines();
@@ -25,13 +19,13 @@ namespace GetMachineNameAssestNameLastestAssest.Service
         }
 
         //This function return all the assest name for a particular machine type is using.
-        public List<string> GetAssetName()
+        public List<string> GetAssetName(string assetName)
         {
             List<string> assetsName = new List<string>();
 
             foreach (MachineProperties machine in machines)
             {
-                if (machine.MachineName == machineName)
+                if (machine.MachineName == assetName)
                 {
                     assetsName.Add(machine.AssetName);
                 }
@@ -41,7 +35,7 @@ namespace GetMachineNameAssestNameLastestAssest.Service
         }
 
         //This function return all the machine name for a particular asset type given.
-        public List<string> GetMachineName()
+        public List<string> GetMachineName(string machineName)
         {
             List<string> machineNames = new List<string>();
 
