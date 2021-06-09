@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GetMachineNameAssestNameLastestAssest.Model;
 using GetMachineNameAssestNameLastestAssest.Service;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GetMachineNameAssestNameLatestSeries.Controllers
@@ -18,7 +19,6 @@ namespace GetMachineNameAssestNameLatestSeries.Controllers
 
             _cuttingMachineAccessories = cuttingMachineAccessories ?? throw new ArgumentNullException(nameof(cuttingMachineAccessories));
         }
-
         [HttpGet]
         public IActionResult GetAllMachines()
         {
@@ -30,7 +30,15 @@ namespace GetMachineNameAssestNameLatestSeries.Controllers
             return Ok(machines);
         }
 
-        [HttpGet("assets-name/{machinename}")]
+        /// <summary>
+        ///Get all Asset Name for a particular machine name  
+        /// </summary>
+        /// <param name="machineName"> The name of machine </param>
+        /// <returns> All the assets name with the particular machine name </returns>
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet("assets-name/{machineName}")]
         public IActionResult GetAssestName(string machineName)
         {
             
@@ -42,7 +50,15 @@ namespace GetMachineNameAssestNameLatestSeries.Controllers
             return Ok(_cuttingMachineAccessories.GetAssetName(machineName));
         }
 
-        [HttpGet("machines-name/{assetname}")]
+        /// <summary>
+        ///Get all machines name for a particular asset name  
+        /// </summary>
+        /// <param name="assetName"> The name of asset </param>
+        /// <returns> All the machines name with the particular asset name </returns>
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet("machines-name/{assetName}")]
         public IActionResult GetMachineName(string assetName)
         {
 
@@ -54,7 +70,10 @@ namespace GetMachineNameAssestNameLatestSeries.Controllers
             }
             return Ok(_cuttingMachineAccessories.GetMachineName(assetName));
         }
-
+        /// <summary>
+        ///Get all machines name that are using latest series of assets 
+        /// </summary>
+        /// <returns> All the machines name with latest series </returns> 
         [HttpGet("latest-series")]
         public IActionResult GetMachineTypeWithLatestSeries()
         {
