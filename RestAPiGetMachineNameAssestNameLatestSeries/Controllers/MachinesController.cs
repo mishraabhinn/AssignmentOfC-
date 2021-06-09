@@ -38,7 +38,7 @@ namespace GetMachineNameAssestNameLatestSeries.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [HttpGet("assets-name/{machineName}")]
+        [HttpGet("assets/{machineName}")]
         public IActionResult GetAssestName(string machineName)
         {
             
@@ -58,7 +58,7 @@ namespace GetMachineNameAssestNameLatestSeries.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [HttpGet("machines-name/{assetName}")]
+        [HttpGet("machines/{assetName}")]
         public IActionResult GetMachineName(string assetName)
         {
 

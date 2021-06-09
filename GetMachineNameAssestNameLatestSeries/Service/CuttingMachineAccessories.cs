@@ -52,27 +52,32 @@ namespace GetMachineNameAssestNameLastestAssest.Service
         }
 
         //This fuction get the machine types which are using the latest series of all the assets that it uses.
-        public List<MachineProperties> GetMachineTypeWithLatestSeries()
+        public List<string> GetMachineTypeWithLatestSeries()
         {
-            List<MachineProperties> latestMachineTypes = new List<MachineProperties>();
-            latestMachineTypes.Add(machines[0]);
+            List<MachineProperties> latestMachines = new List<MachineProperties>();
+            latestMachines.Add(machines[0]);
             for (int i = 1; i < machines.Count; i++)
             {
-                for (int j = 0; j < latestMachineTypes.Count; j++)
+                for (int j = 0; j < latestMachines.Count; j++)
                 {
-                    if (String.Compare(latestMachineTypes[j].AssetName, machines[i].AssetName) == 0)
+                    if (String.Compare(latestMachines[j].AssetName, machines[i].AssetName) == 0)
                     {
-                        if (String.Compare(latestMachineTypes[j].Series, machines[i].Series) < 0)
+                        if (String.Compare(latestMachines[j].Series, machines[i].Series) < 0)
                         {
-                            latestMachineTypes.RemoveAt(j);
-                            latestMachineTypes.Add(machines[i]);
+                            latestMachines.RemoveAt(j);
+                            latestMachines.Add(machines[i]);
                             break;
                         }
 
                     }
                 }
             }
-            return latestMachineTypes;
+            List<string> latestMachineNames = new List<string>();
+            foreach (var allMachines in latestMachines)
+            {
+                latestMachineNames.Add(allMachines.MachineName);
+            }
+            return latestMachineNames;
         }
 
     }

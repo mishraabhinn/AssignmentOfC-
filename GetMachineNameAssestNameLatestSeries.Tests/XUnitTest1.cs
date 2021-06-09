@@ -68,10 +68,10 @@ namespace GetMachineNameAssestNameLastestAssest.Tests
             string actual = "C60";
 
             //act
-            List<MachineProperties> expected = obj.GetMachineTypeWithLatestSeries();
+            List<string> expected = obj.GetMachineTypeWithLatestSeries();
 
             //assert
-            Assert.Equal(actual, expected[0].MachineName);
+            Assert.Equal(actual, expected[0]);
 
         }
 
